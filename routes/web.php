@@ -1,18 +1,12 @@
 <?php
 
+use App\Http\Controllers\DataclearController;
+use App\Http\Controllers\DatagetController;
+use App\Http\Controllers\DatasaveController;
 use Illuminate\Support\Facades\Route;
 
-/*
-|--------------------------------------------------------------------------
-| Web Routes
-|--------------------------------------------------------------------------
-|
-| Here is where you can register web routes for your application. These
-| routes are loaded by the RouteServiceProvider within a group which
-| contains the "web" middleware group. Now create something great!
-|
-*/
+// Route::get('/{token}', [WelcomeController::class, 'WelcomePage']);
 
-Route::get('/', function () {
-    return view('welcome');
-});
+Route::get('/save', [DatasaveController::class, 'DataSave']);
+Route::get('/get', [DatagetController::class, 'DataGet']);
+Route::get('/clear', [DataclearController::class, 'DataClear']);

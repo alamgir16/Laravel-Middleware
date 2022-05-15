@@ -8,6 +8,12 @@ use Illuminate\Http\Request;
 class DemoMiddleware {
 
     public function handle(Request $request, Closure $next) {
-        return $next($request);
+
+        $token = $request->token;
+        if ($token == 'alam') {
+            return $next($request);
+        } else {
+            return response('User Blocked');
+        }
     }
 }
